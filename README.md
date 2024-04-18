@@ -22,7 +22,7 @@ An updated lidar-initial odometry package, [LIO-SAM](https://github.com/TixiaoSh
   cd ~/Downloads/gtsam-4.0.0-alpha2/
   mkdir build && cd build
   cmake ..
-
+  (optional to avoid eigen confict) cmake -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF -DGTSAM_USE_SYSTEM_EIGEN=ON ..
   sudo make install
   ```
 
@@ -35,7 +35,7 @@ cd ~/catkin_ws/src
 git clone https://github.com/RobustFieldAutonomyLab/LeGO-LOAM.git
 cd ..
 catkin_make -j1
-(optional to avoid eigen confict) cmake -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF -DGTSAM_USE_SYSTEM_EIGEN=ON ..
+
 ```
 When you compile the code for the first time, you need to add "-j1" behind "catkin_make" for generating some message types. "-j1" is not needed for future compiling.
 
